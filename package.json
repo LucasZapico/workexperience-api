@@ -15,11 +15,19 @@
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/node": "^7.10.5",
-    "@babel/preset-env": "^7.11.0"
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-node-externals": "^2.5.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec babel-node app.js"
+    "clean": "rm -rf build",
+    "local": "nodemon --exec babel-node app.js",
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development",
+    "start": "node build/app.js"
   },
   "keywords": [],
   "author": "",
